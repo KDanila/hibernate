@@ -68,5 +68,6 @@
 
     <modules>
         <module>CRUDHibernate</module>
+        <module>OneToOne</module>
     </modules>
 </project>
