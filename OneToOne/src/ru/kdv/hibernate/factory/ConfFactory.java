@@ -11,7 +11,7 @@ public class ConfFactory {
 
     public static synchronized Session getCurrentSession(){
         initFactory();
-        return factory.getCurrentSession();
+        return factory.openSession();
     }
 
     private static void initFactory() {

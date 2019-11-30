@@ -13,7 +13,6 @@ public class MainClass {
             InstructorDetail instructorDetail = new InstructorDetail("youtube.com/nothing", "Programing");
 
             instructor.setInstructorDetail(instructorDetail);
-
             session.beginTransaction();
             System.out.println("Saving instructor " + instructor);
             session.save(instructor);

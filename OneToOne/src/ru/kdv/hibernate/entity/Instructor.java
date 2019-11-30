@@ -8,6 +8,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+@Entity
+@Table(name = "instructor")
 public class Instructor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
