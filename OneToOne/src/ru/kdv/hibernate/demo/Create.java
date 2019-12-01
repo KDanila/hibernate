@@ -1,11 +1,11 @@
-package ru.kdv.hibernate;
+package ru.kdv.hibernate.demo;
 
 import org.hibernate.Session;
 import ru.kdv.hibernate.entity.Instructor;
 import ru.kdv.hibernate.entity.InstructorDetail;
 import ru.kdv.hibernate.factory.ConfFactory;
 
-public class MainClass {
+public class Create {
     public static void main(String[] args) {
         Session session = ConfFactory.getCurrentSession();
         try {
