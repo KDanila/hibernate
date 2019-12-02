@@ -1,11 +1,10 @@
 package ru.kdv.hibernate.demo;
 
 import org.hibernate.Session;
-import ru.kdv.hibernate.entity.Instructor;
 import ru.kdv.hibernate.entity.InstructorDetail;
 import ru.kdv.hibernate.factory.ConfFactory;
 
-public class GetInstructorDetail {
+public class DeleteInstrucrorDetail {
     public static void main(String[] args) {
         Session session = ConfFactory.getCurrentSession();
         try {
@@ -14,9 +13,10 @@ public class GetInstructorDetail {
             InstructorDetail instructorDetail = session.get(InstructorDetail.class, id);
             System.out.println("Instructor detail:" + instructorDetail);
             System.out.println("Associated instructor:" + instructorDetail.getInstructor());
+            System.out.println("delete instrucrtor detail: ");
+            session.delete(instructorDetail);
             session.getTransaction().commit();
             System.out.println("Done");
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
