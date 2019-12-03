@@ -24,6 +24,8 @@ public class InstructorDetail {
 
     @ToString.Exclude
     @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    //Use to delete only instructorDetail without instructor.
+    //@OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH, CascadeType.MERGE})
     private Instructor instructor;
 
     public InstructorDetail(String youtubeChanel, String hobby) {

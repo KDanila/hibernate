@@ -14,6 +14,9 @@ public class DeleteInstrucrorDetail {
             System.out.println("Instructor detail:" + instructorDetail);
             System.out.println("Associated instructor:" + instructorDetail.getInstructor());
             System.out.println("delete instrucrtor detail: ");
+            //If we want to delete only InstructorDetail without instructor, we should
+            //break relation between two tables.
+            //instructorDetail.getInstructor().setInstructorDetail(null);
             session.delete(instructorDetail);
             session.getTransaction().commit();
             System.out.println("Done");
