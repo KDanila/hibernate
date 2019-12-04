@@ -70,5 +70,6 @@
         <module>CRUDHibernate</module>
         <module>OneToOne</module>
         <module>OneToOneBi</module>
+        <module>OneToMany</module>
     </modules>
 </project>
