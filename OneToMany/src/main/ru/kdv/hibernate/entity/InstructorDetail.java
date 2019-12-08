@@ -1,4 +1,4 @@
-package ru.kdv.hibernate.entity;
+package main.ru.kdv.hibernate.entity;
 
 import lombok.*;
 

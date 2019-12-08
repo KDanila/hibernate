@@ -1,11 +1,11 @@
-package ru.kdv.hibernate.factory;
+package main.ru.kdv.hibernate.factory;
 
+import main.ru.kdv.hibernate.entity.Course;
+import main.ru.kdv.hibernate.entity.Instructor;
+import main.ru.kdv.hibernate.entity.InstructorDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import ru.kdv.hibernate.entity.Course;
-import ru.kdv.hibernate.entity.Instructor;
-import ru.kdv.hibernate.entity.InstructorDetail;
 
 public class ConfFactory {
     private static SessionFactory factory;
