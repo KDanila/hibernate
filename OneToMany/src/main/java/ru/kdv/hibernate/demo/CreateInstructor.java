@@ -1,13 +1,14 @@
-package main.ru.kdv.hibernate.demo;
+package main.java.ru.kdv.hibernate.demo;
 
-import main.ru.kdv.hibernate.entity.Instructor;
-import main.ru.kdv.hibernate.entity.InstructorDetail;
-import main.ru.kdv.hibernate.factory.ConfFactory;
+import main.java.ru.kdv.hibernate.entity.Instructor;
+import main.java.ru.kdv.hibernate.entity.InstructorDetail;
+import main.java.ru.kdv.hibernate.factory.ConfFactory;
 import org.hibernate.Session;
 
 public class CreateInstructor {
     public static void main(String[] args) {
-        Session session = ConfFactory.getCurrentSession();
+        ConfFactory cf = new ConfFactory();
+        Session session = cf.getCurrentSession();
         try {
             Instructor instructor = new Instructor("Egor", "Agrhhh", "EgorAgrhh@ya.ru");
             InstructorDetail instructorDetail = new InstructorDetail("youtube.com/nothing", "Programing");
@@ -20,7 +21,7 @@ public class CreateInstructor {
             System.out.println("Done");
 
         } finally {
-            ConfFactory.closeCurrentSession();
+            cf.closeCurrentSession();
         }
     }
 }
