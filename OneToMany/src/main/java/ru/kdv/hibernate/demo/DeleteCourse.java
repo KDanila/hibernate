@@ -1,11 +1,8 @@
-package main.java.ru.kdv.hibernate.demo;
+package ru.kdv.hibernate.demo;
 
-import main.java.ru.kdv.hibernate.entity.Course;
-import main.java.ru.kdv.hibernate.entity.Instructor;
-import main.java.ru.kdv.hibernate.factory.ConfFactory;
 import org.hibernate.Session;
-
-import java.util.List;
+import ru.kdv.hibernate.entity.Course;
+import ru.kdv.hibernate.factory.ConfFactory;
 
 public class DeleteCourse {
     public static void main(String[] args) {
