@@ -71,5 +71,6 @@
         <module>OneToOne</module>
         <module>OneToOneBi</module>
         <module>OneToMany</module>
+        <module>EagerVsLazy</module>
     </modules>
 </project>
