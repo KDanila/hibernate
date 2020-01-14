@@ -4,27 +4,29 @@ import hibernate.entity.Course;
 import hibernate.entity.Instructor;
 import hibernate.factory.ConfFactory;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class EagerLazy {
+public class FetchHQL {
     public static void main(String[] args) {
         ConfFactory cf = new ConfFactory();
         Session session = cf.getCurrentSession();
         try {
             session.beginTransaction();
             int id = 1;
-            Instructor instructor = session.get(Instructor.class, id);
 
-            List<Course> courses = instructor.getCourses();
+            Query<Instructor> query = session.createQuery("select i from Instructor i " +
+                    "join fetch i.courses " +
+                    "where i.id=:instructorId", Instructor.class);
+            query.setParameter("instructorId", id);
 
-            System.out.println(courses);
+            Instructor instructor = query.getSingleResult();
 
             session.getTransaction().commit();
 
             session.close();
-            // After close session with LAZY fetch we have exception
-            // to avoid can call this method while session is open 19 line
+
             System.out.println(instructor.getCourses());
 
         } finally {
