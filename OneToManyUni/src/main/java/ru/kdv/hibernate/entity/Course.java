@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -23,6 +24,18 @@ public class Course {
             CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "instructor_id")
     private Instructor instructor;
+
+    @OneToMany(fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)//if delete course -> delete reviews
+    @JoinColumn(name = "course_id")
+    private List<Review> reviews;
+
+    public void addRewiew(Review review) {
+        if (reviews == null) {
+            reviews = new ArrayList<>();
+        }
+        reviews.add(review);
+    }
 
     public Course(String title) {
         this.title = title;

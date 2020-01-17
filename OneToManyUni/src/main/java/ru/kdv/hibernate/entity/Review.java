@@ -19,4 +19,8 @@ public class Review {
     private int id;
     @Column(name = "comment")
     private String comment;
+
+    public Review(String comment) {
+        this.comment = comment;
+    }
 }
