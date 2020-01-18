@@ -1,11 +1,10 @@
 package ru.kdv.hibernate.demo;
 
+import org.hibernate.Session;
 import ru.kdv.hibernate.entity.Course;
 import ru.kdv.hibernate.factory.ConfFactory;
-import org.hibernate.Session;
-import ru.kdv.hibernate.entity.Review;
 
-public class CreateCourseAndReviews {
+public class DeleteteCourseAndReviews {
     public static void main(String[] args) {
         ConfFactory cf = new ConfFactory();
         Session session = cf.getCurrentSession();
@@ -13,13 +12,11 @@ public class CreateCourseAndReviews {
 
             session.beginTransaction();
 
-            Course course = new Course("Vim - how to escape");
+            int id = 10;
 
-            course.addRewiew(new Review("Yeh! I can quit!"));
-            course.addRewiew(new Review("Amazing, it's really has quit option!"));
-            course.addRewiew(new Review("I still can't install it!"));
+            Course course = session.get(Course.class, id);
 
-            session.save(course);
+            session.delete(course);
 
             session.getTransaction().commit();
 
