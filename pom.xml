@@ -73,5 +73,6 @@
         <module>OneToMany</module>
         <module>EagerVsLazy</module>
         <module>OneToManyUni</module>
+        <module>ManyToMany</module>
     </modules>
 </project>
